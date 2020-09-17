@@ -15,11 +15,22 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="*" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="auto" Grid.Row="2" Width="auto"/>
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="auto" Grid.Row="1" Width="auto"/>
 
+        <WrapPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="BtnCreateNewEntry" Height="80" Width="120" Click="BtnCreateNewEntry_Click">New Entry</Button>
+            <Button x:Name="BtnSearchEntry" Height="80" Width="120" Click="BtnSearchEntry_Click">Search Entry</Button>
+            <Button x:Name="BtnCloseApplication" Height="80" Width="120" Click="BtnCloseApplication_Click">Exit</Button>
+            
+            <TextBlock x:Name="currentUser" Text="Current User" HorizontalAlignment="Right" Initialized="TextBlock_Initialized"/>
+        </WrapPanel>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

@@ -24,5 +24,28 @@ namespace WPF_Login
         {
             InitializeComponent();
         }
+
+        private void BtnCreateNewEntry_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new EntryTypeOverview());
+        }
+
+        private void BtnSearchEntry_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SearchEntry());
+        }
+
+        private void BtnCloseApplication_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void TextBlock_Initialized(object sender, EventArgs e)
+        {
+            // How to pass data between windows?
+            user usr2 = new user("SomeName", "PW");
+            
+            currentUser.Text = "currentUser: " + usr2.getName();
+        }
     }
 }

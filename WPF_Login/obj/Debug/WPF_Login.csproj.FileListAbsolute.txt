@@ -1,7 +1,6 @@
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\WPF_Login.exe.config
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\WPF_Login.exe
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\WPF_Login.pdb
-C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login.csprojAssemblyReference.cache
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\MainWindow.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\App.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login_MarkupCompile.cache
@@ -28,3 +27,8 @@ C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\System.Data.
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login_Content.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login.csproj.CopyComplete
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\SearchEntry.g.cs
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\SearchEntry.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\EntryTypeOverview.g.cs
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\EntryTypeOverview.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login.csprojAssemblyReference.cache
