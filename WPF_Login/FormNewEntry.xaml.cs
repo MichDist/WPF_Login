@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace WPF_Login
 {
     /// <summary>
-    /// Interaction logic for EntryTypeOverview.xaml
+    /// Interaction logic for FormNewEntry.xaml
     /// </summary>
-    public partial class EntryTypeOverview : Page
+    public partial class FormNewEntry : Page
     {
-        public EntryTypeOverview()
+        public FormNewEntry()
         {
             InitializeComponent();
-        }
-
-        private void BtnDiary_Click(object sender, RoutedEventArgs e)
-        {
-            EntryFrame.Navigate(new FormNewEntry());
         }
     }
 }

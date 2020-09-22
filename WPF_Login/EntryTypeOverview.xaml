@@ -9,6 +9,23 @@
       Title="EntryTypeOverview">
 
     <Grid>
-        <TextBlock Text="Entry Types Overview" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" Grid.Column="0">
+            <Button Name="BtnDiary" Content="Diary" Margin="20" Height="120" Width="120" Click="BtnDiary_Click" />
+            <Button Name="BtbNote" Content="Note" Margin="20" Height="120" Width="120" />
+            <Button Content="Dream" Margin="20" Height="120" Width="120" />
+            <Button Content="General" Margin="20" Height="120" Width="120" />
+        </WrapPanel>
+        
+        <TextBlock Text="Entry Types Overview" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+
+        <Frame x:Name="EntryFrame" Grid.Column="0" Grid.Row="0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

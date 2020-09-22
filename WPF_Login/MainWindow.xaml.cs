@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace WPF_Login
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
 
         private void BtnCreateNewEntry_Click(object sender, RoutedEventArgs e)
@@ -42,10 +45,27 @@ namespace WPF_Login
 
         private void TextBlock_Initialized(object sender, EventArgs e)
         {
+            currentUser.Text = currentUser.Text + App.Current.Properties["currentUser"].ToString();
+            // Date ??
+
             // How to pass data between windows?
-            user usr2 = new user("SomeName", "PW");
-            
-            currentUser.Text = "currentUser: " + usr2.getName();
+            //string cs = @"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db";
+            //var con = new SQLiteConnection(cs);
+            //con.Open();
+            //var cmd = new SQLiteCommand(con);
+
+            //cmd.CommandText = "SELECT user_name FROM temp.CURRENT_USER ";
+            //cmd.Prepare();
+
+            //SQLiteDataReader rdr = cmd.ExecuteReader();
+
+            //while (rdr.Read())
+            //{
+            //    currentUser.Text = rdr.GetString(0);
+            //}
+
+            //rdr.Close();
+            //con.Close();
         }
     }
 }

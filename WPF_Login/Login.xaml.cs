@@ -21,6 +21,8 @@ namespace WPF_Login
     /// </summary>
     public partial class Login : Window
     {
+        
+
         public Login()
         {
             InitializeComponent();
@@ -52,9 +54,21 @@ namespace WPF_Login
                 usr.setPassword(rdr.GetString(2));
             }
 
+            rdr.Close();
+
             // Check if credentials are correct
             if (usr.getPassword() == txtPassword.Text)
             {
+                // Create temp table to save current user
+
+                //cmd.CommandText = @"CREATE TEMPORARY TABLE temp.CURRENT_USER(user_name TEXT)";
+                //cmd.ExecuteNonQuery();
+                //cmd.CommandText = "INSERT INTO CURRENT_USER(user_name) VALUES(@user_name)";
+                //cmd.Parameters.AddWithValue("@user_name", usr.getName());
+                //cmd.ExecuteNonQuery();
+
+                App.Current.Properties["currentUser"] = usr.getName();
+
                 //Navigate to main window
                 var newWindow = new MainWindow(); 
                 newWindow.Show(); 

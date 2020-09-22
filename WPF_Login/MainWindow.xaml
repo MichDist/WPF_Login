@@ -27,7 +27,7 @@
             <Button x:Name="BtnSearchEntry" Height="80" Width="120" Click="BtnSearchEntry_Click">Search Entry</Button>
             <Button x:Name="BtnCloseApplication" Height="80" Width="120" Click="BtnCloseApplication_Click">Exit</Button>
             
-            <TextBlock x:Name="currentUser" Text="Current User" HorizontalAlignment="Right" Initialized="TextBlock_Initialized"/>
+            <TextBlock x:Name="currentUser" Text="Current User: " HorizontalAlignment="Right" Initialized="TextBlock_Initialized" MaxWidth="80" TextWrapping="Wrap"/>
         </WrapPanel>
 
         <Frame x:Name="MainFrame" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden"/>

@@ -78,11 +78,18 @@
     <Compile Include="EntryTypeOverview.xaml.cs">
       <DependentUpon>EntryTypeOverview.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormNewEntry.xaml.cs">
+      <DependentUpon>FormNewEntry.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SearchEntry.xaml.cs">
       <DependentUpon>SearchEntry.xaml</DependentUpon>
     </Compile>
     <Compile Include="user.cs" />
     <Page Include="EntryTypeOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormNewEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
