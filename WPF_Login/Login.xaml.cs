@@ -30,31 +30,13 @@ namespace WPF_Login
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            string cs = @"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db";
-            var con = new SQLiteConnection(cs);
-            
-            con.Open();
-            var cmd = new SQLiteCommand(con);
-            
-            cmd.CommandText = "SELECT user_id, user_name, password FROM user WHERE @user_name = user_name";
+            user loginUser = new user();
+            loginUser.setName(txtUsername.Text);
+            loginUser.setPassword(txtPassword.Text);
 
-            cmd.Parameters.AddWithValue("@user_name", txtUsername.Text);
-            //cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+            DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
 
-            cmd.Prepare();
-
-            SQLiteDataReader rdr = cmd.ExecuteReader();
-
-            // Create user
-            user usr = new user();
-            // Read result                                  
-            while (rdr.Read())
-            {
-                usr.setName(rdr.GetString(1));
-                usr.setPassword(rdr.GetString(2));
-            }
-
-            rdr.Close();
+            user usr = db.getUserData(loginUser);
 
             // Check if credentials are correct
             if (usr.getPassword() == txtPassword.Text)
@@ -90,7 +72,7 @@ namespace WPF_Login
              * cmd.CommandText = "CREATE TABLE user2(user_id INTEGER PRIMARY KEY, user_name TEXT, password TEXT)";
             cmd.ExecuteNonQuery();
             */
-            con.Close();
+            //con.Close();
 
         }
     }

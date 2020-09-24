@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Login"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="800" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -23,10 +23,14 @@
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Height="auto" Grid.Row="1" Width="auto"/>
 
         <WrapPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="BtnHome" Height="80" Width="120" Click="BtnHome_Click">Home</Button>
             <Button x:Name="BtnCreateNewEntry" Height="80" Width="120" Click="BtnCreateNewEntry_Click">New Entry</Button>
             <Button x:Name="BtnSearchEntry" Height="80" Width="120" Click="BtnSearchEntry_Click">Search Entry</Button>
+            <Button x:Name="BtnExportImport" Height="80" Width="120" Click="BtnExportImport_Click">Export/Import</Button>
+            <Button x:Name="BtnTasks" Height="80" Width="120" Click="BtnTasks_Click">Tasks</Button>
+            <Button x:Name="BtnUserConfig" Height="80" Width="120" Click="BtnUserConfig_Click">User config</Button>
             <Button x:Name="BtnCloseApplication" Height="80" Width="120" Click="BtnCloseApplication_Click">Exit</Button>
-            
+
             <TextBlock x:Name="currentUser" Text="Current User: " HorizontalAlignment="Right" Initialized="TextBlock_Initialized" MaxWidth="80" TextWrapping="Wrap"/>
         </WrapPanel>
 

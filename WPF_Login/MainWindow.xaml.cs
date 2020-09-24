@@ -25,17 +25,17 @@ namespace WPF_Login
         {
             InitializeComponent();
 
-            
+            MainFrame.Navigate(new Home());
         }
 
         private void BtnCreateNewEntry_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new EntryTypeOverview());
+            MainFrame.Navigate(new FormNewEntry());
         }
 
         private void BtnSearchEntry_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SearchEntry());
+            MainFrame.Navigate(new SearchEntry());           
         }
 
         private void BtnCloseApplication_Click(object sender, RoutedEventArgs e)
@@ -66,6 +66,26 @@ namespace WPF_Login
 
             //rdr.Close();
             //con.Close();
+        }
+
+        private void BtnHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Home());
+        }
+
+        private void BtnExportImport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnTasks_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnUserConfig_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -8,8 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FormNewEntry">
 
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
             <ColumnDefinition Width = "*" />
         </Grid.ColumnDefinitions>
 
@@ -17,7 +18,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="ENTRY FORM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
-         
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Button Name="BtnGeneralEntry" Height="40" Width="auto" Click="BtnGeneralEntry_Click" >General Entry</Button>
+        </StackPanel>
+
+        <Frame Name="EntryFrame" Grid.Column="1" Grid.Row="0" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </Page>

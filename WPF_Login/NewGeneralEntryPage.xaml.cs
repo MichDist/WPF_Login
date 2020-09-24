@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace WPF_Login
 {
     /// <summary>
-    /// Interaction logic for FormNewEntry.xaml
+    /// Interaction logic for NewGeneralEntryPage.xaml
     /// </summary>
-    public partial class FormNewEntry : Page
+    public partial class NewGeneralEntryPage : Page
     {
-        public FormNewEntry()
+        public NewGeneralEntryPage()
         {
             InitializeComponent();
-        }
-
-        private void BtnGeneralEntry_Click(object sender, RoutedEventArgs e)
-        {
-            EntryFrame.Navigate(new NewGeneralEntryPage());
         }
     }
 }

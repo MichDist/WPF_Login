@@ -34,3 +34,7 @@ C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\EntryTypeOve
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\WPF_Login.csprojAssemblyReference.cache
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\FormNewEntry.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\FormNewEntry.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Home.g.cs
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Home.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\NewGeneralEntryPage.g.cs
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\NewGeneralEntryPage.baml
