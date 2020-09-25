@@ -38,3 +38,5 @@ C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Home.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Home.baml
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\NewGeneralEntryPage.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\NewGeneralEntryPage.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\RegisterNewUser.g.cs
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\RegisterNewUser.baml

@@ -30,36 +30,32 @@ namespace WPF_Login
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            user loginUser = new user();
-            loginUser.setName(txtUsername.Text);
-            loginUser.setPassword(txtPassword.Text);
+            user loginUser = new user(txtUsername.Text, txtPassword.Text);
 
             DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
 
-            user usr = db.getUserData(loginUser);
-
-            // Check if credentials are correct
-            if (usr.getPassword() == txtPassword.Text)
+            // Check if user exists
+            if(db.userMgt(loginUser, "CheckUserNameExists"))
             {
-                // Create temp table to save current user
-
-                //cmd.CommandText = @"CREATE TEMPORARY TABLE temp.CURRENT_USER(user_name TEXT)";
-                //cmd.ExecuteNonQuery();
-                //cmd.CommandText = "INSERT INTO CURRENT_USER(user_name) VALUES(@user_name)";
-                //cmd.Parameters.AddWithValue("@user_name", usr.getName());
-                //cmd.ExecuteNonQuery();
-
-                App.Current.Properties["currentUser"] = usr.getName();
-
-                //Navigate to main window
-                var newWindow = new MainWindow(); 
-                newWindow.Show(); 
-                this.Close(); 
+                // Check if password is correct
+                if(db.userMgt(loginUser, "CheckUserPW"))
+                {
+                    // Navigate to main window and save current user
+                    App.Current.Properties["currentUser"] = loginUser.getName();
+                    var newWindow = new MainWindow();
+                    this.Close();
+                    newWindow.Show();
+                }
+                else
+                {
+                    lblPasswordCheck.Content = "Password is wrong!";
+                }
             }
             else
             {
-                lblPasswordCheck.Content = "Wrong password!";
+                lblPasswordCheck.Content = "User does not exist!";
             }
+            
  
 
             /* User anlegen 
@@ -74,6 +70,12 @@ namespace WPF_Login
             */
             //con.Close();
 
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            var newWindow = new RegisterNewUser();
+            newWindow.Show();
         }
     }
 }

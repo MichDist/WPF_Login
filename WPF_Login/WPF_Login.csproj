@@ -75,7 +75,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DB\CheckUserNameExists.cs" />
+    <Compile Include="DB\CheckUserPW.cs" />
+    <Compile Include="DB\CreateNewUser.cs" />
     <Compile Include="DB\Database.cs" />
+    <Compile Include="DB\IUserMgt.cs" />
     <Compile Include="EntryTypeOverview.xaml.cs">
       <DependentUpon>EntryTypeOverview.xaml</DependentUpon>
     </Compile>
@@ -87,6 +91,9 @@
     </Compile>
     <Compile Include="NewGeneralEntryPage.xaml.cs">
       <DependentUpon>NewGeneralEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterNewUser.xaml.cs">
+      <DependentUpon>RegisterNewUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchEntry.xaml.cs">
       <DependentUpon>SearchEntry.xaml</DependentUpon>
@@ -124,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewGeneralEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterNewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
