@@ -92,6 +92,9 @@
     <Compile Include="NewGeneralEntryPage.xaml.cs">
       <DependentUpon>NewGeneralEntryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageUserConfig.xaml.cs">
+      <DependentUpon>PageUserConfig.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegisterNewUser.xaml.cs">
       <DependentUpon>RegisterNewUser.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewGeneralEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageUserConfig.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

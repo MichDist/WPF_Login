@@ -85,7 +85,7 @@ namespace WPF_Login
 
         private void BtnUserConfig_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new Pages.PageUserConfig());
         }
     }
 }
