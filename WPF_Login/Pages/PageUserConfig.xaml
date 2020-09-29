@@ -26,7 +26,8 @@
         <Label Grid.Row="2" Grid.Column="0" Content="New username:" HorizontalAlignment="Center" FontSize="16" />
         <TextBox x:Name="tboxNewUserName" Grid.Row="2" Grid.Column="1" FontSize="16" Height="20" Width="150" HorizontalAlignment="Left"/>
         <Button Name="btnNewUserName" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Content="Save new username" Height="25" Width="130" Click="btnNewUserName_Click" />
-
+        
+        
         <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Content="Change password" HorizontalAlignment="Center" FontSize="20" />
         <Label Grid.Row="2" Grid.Column="2" Content="New password:" HorizontalAlignment="Center" FontSize="16" />
         <TextBox x:Name="tboxNewPassword" Grid.Row="2" Grid.Column="3" FontSize="16" Height="20" Width="150" HorizontalAlignment="Left"/>

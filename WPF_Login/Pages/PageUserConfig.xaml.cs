@@ -27,12 +27,32 @@ namespace WPF_Login.Pages
 
         private void btnNewUserName_Click(object sender, RoutedEventArgs e)
         {
+            user currentUser = (user)App.Current.Properties["currentUser"];
 
+            currentUser.setName(tboxNewUserName.Text);
+
+            DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
+
+            db.userMgt(currentUser, "ChangeUsername"); // SPÄTER MIT UNTEN STEHENDEN ERSETZEN
+            //if(db.userMgt(currentUser, "ChangeUsername"))
+            //{
+            //    MELDUNG ÜBER NEUES LABEL
+            //}
         }
 
         private void btnNewPassword_Click(object sender, RoutedEventArgs e)
         {
+            user currentUser = (user)App.Current.Properties["currentUser"];
 
+            currentUser.setPassword(tboxNewPassword.Text);
+
+            DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
+
+            db.userMgt(currentUser, "ChangePassword"); // SPÄTER ERSETZEN
+            //if(db.userMgt(currentUser, "ChangeUsername"))
+            //{
+            //    MELDUNG ÜBER NEUES LABEL
+            //}
         }
     }
 }

@@ -75,10 +75,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DB\ChangePassword.cs" />
+    <Compile Include="DB\ChangeUserName.cs" />
     <Compile Include="DB\CheckUserNameExists.cs" />
     <Compile Include="DB\CheckUserPW.cs" />
     <Compile Include="DB\CreateNewUser.cs" />
     <Compile Include="DB\Database.cs" />
+    <Compile Include="DB\GetUserData.cs" />
     <Compile Include="DB\IUserMgt.cs" />
     <Compile Include="EntryTypeOverview.xaml.cs">
       <DependentUpon>EntryTypeOverview.xaml</DependentUpon>

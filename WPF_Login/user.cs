@@ -8,6 +8,7 @@ namespace WPF_Login
 {
     class user
     {
+        private int id;
         private string name;
         private string password;
 
@@ -19,6 +20,16 @@ namespace WPF_Login
         public user()
         {
 
+        }
+
+        public void setID(int id)
+        {
+            this.id = id;
+        }
+
+        public int getID()
+        {
+            return this.id;
         }
 
         public void setName(string name)

@@ -45,7 +45,9 @@ namespace WPF_Login
 
         private void TextBlock_Initialized(object sender, EventArgs e)
         {
-            currentUser.Text = currentUser.Text + App.Current.Properties["currentUser"].ToString();
+            user curUser = (user) App.Current.Properties["currentUser"];
+            currentUser.Text = currentUser.Text + curUser.getName();
+            //currentUser.Text = currentUser.Text + App.Current.Properties["currentUser"].ToString();
             // Date ??
 
             // How to pass data between windows?

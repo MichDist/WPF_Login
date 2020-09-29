@@ -36,36 +36,36 @@ namespace WPF_Login.DB
         #endregion
 
         // User
-        public user getUserData(user pUser)
-        {
-            var connection = new SQLiteConnection(sConnectionString);
+        //public user getUserData(user pUser)
+        //{
+        //    var connection = new SQLiteConnection(sConnectionString);
 
-            connection.Open();
+        //    connection.Open();
 
-            var command = new SQLiteCommand(connection);
+        //    var command = new SQLiteCommand(connection);
 
-            command.CommandText = "SELECT user_id, user_name, password FROM user WHERE @user_name = user_name";
+        //    command.CommandText = "SELECT user_id, user_name, password FROM user WHERE @user_name = user_name";
 
-            command.Parameters.AddWithValue("@user_name", pUser.getName());
-            //cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+        //    command.Parameters.AddWithValue("@user_name", pUser.getName());
+        //    //cmd.Parameters.AddWithValue("@password", txtPassword.Text);
 
-            command.Prepare();
+        //    command.Prepare();
 
-            SQLiteDataReader rdr = command.ExecuteReader();
+        //    SQLiteDataReader rdr = command.ExecuteReader();
 
-            user usr = new user();
-            // Read result                                  
-            while (rdr.Read())
-            {
-                usr.setName(rdr.GetString(1));
-                usr.setPassword(rdr.GetString(2));
-            }
+        //    user usr = new user();
+        //    // Read result                                  
+        //    while (rdr.Read())
+        //    {
+        //        usr.setName(rdr.GetString(1));
+        //        usr.setPassword(rdr.GetString(2));
+        //    }
 
-            rdr.Close();
-            connection.Close();
+        //    rdr.Close();
+        //    connection.Close();
 
-            return usr;
-        }
+        //    return usr;
+        //}
 
         public Boolean userNameExists(user pLoginUser)
         {
@@ -104,12 +104,40 @@ namespace WPF_Login.DB
             {
                 {"CheckUserNameExists", new CheckUserNameExists() },
                 {"CheckUserPW", new CheckUserPW() },
-                {"CreateNewUser", new CreateNewUser() }
+                {"CreateNewUser", new CreateNewUser() },
+                {"ChangeUsername", new ChangeUserName() },
+                {"ChangePassword", new ChangePassword() }
             };
 
             IUserMgt selectedOperation = userMgtOperations[pChoice];
 
             return selectedOperation.databaseOperation(pLoginUser, sConnectionString);            
+        }
+
+        public user getUserData(user pUser)
+        {
+            var connection = new SQLiteConnection(sConnectionString);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+            command.CommandText = "SELECT user_id, user_name, password FROM user WHERE @user_name = user_name";
+            command.Parameters.AddWithValue("@user_name", pUser.getName());
+            command.Prepare();
+
+            SQLiteDataReader rdr = command.ExecuteReader();
+
+            // Read result                                  
+            while (rdr.Read())
+            {
+                pUser.setID(rdr.GetInt32(0));
+                pUser.setName(rdr.GetString(1));
+                pUser.setPassword(rdr.GetString(2));
+            }
+
+            rdr.Close();
+            connection.Close();
+
+            return pUser;
         }
     }
 }

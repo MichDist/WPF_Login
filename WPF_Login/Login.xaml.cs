@@ -40,8 +40,9 @@ namespace WPF_Login
                 // Check if password is correct
                 if(db.userMgt(loginUser, "CheckUserPW"))
                 {
-                    // Navigate to main window and save current user
-                    App.Current.Properties["currentUser"] = loginUser.getName();
+                    // Navigate to main window and save current user and get user data from db
+                    loginUser = db.getUserData(loginUser);
+                    App.Current.Properties["currentUser"] = loginUser;
                     var newWindow = new MainWindow();
                     this.Close();
                     newWindow.Show();
