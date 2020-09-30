@@ -23,6 +23,13 @@ namespace WPF_Login
         public SearchEntry()
         {
             InitializeComponent();
+
+            List<Model.Entry> list = new List<Model.Entry>();
+            list.Add(new Model.Entry("TEST TEXT 1"));
+            list.Add(new Model.Entry("TEST TEXT 2"));
+            list.Add(new Model.Entry("TEST TEXT 3"));
+
+            lbEntries.ItemsSource = list;
         }
     }
 }

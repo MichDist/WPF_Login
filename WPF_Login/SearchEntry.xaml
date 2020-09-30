@@ -9,6 +9,20 @@
       Title="SearchEntry">
 
     <Grid>
-        <TextBlock Text="Search entries" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Name="lbEntries" HorizontalContentAlignment="Stretch" Grid.Row="0" Grid.Column="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontWeight="Bold" Foreground="Red" Text="{Binding entry_abstract}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Page>
