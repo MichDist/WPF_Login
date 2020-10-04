@@ -8,26 +8,17 @@ namespace WPF_Login.Model
 {
     class Entry
     {
-        private int id;
-        private int user_id;
-        private int topic_id;
+        public int id;
+        public int user_id;
+        public Topic topic { get; set; }
         public string entry_abstract { get; set; }
 
 
-        public Entry(string pAbstract) 
+        public Entry(string pAbstract, Topic pTopic) 
         {
             this.entry_abstract = pAbstract;
+            this.topic = pTopic;
         }
 
-
-
-        //public void setAbstract(string pAbstract)
-        //{
-        //    this.entry_abstract = pAbstract;
-        //}
-        //public string getAbstract()
-        //{
-        //    return this.entry_abstract;
-        //}
     }
 }

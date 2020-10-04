@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SQLite;
 using System.Windows.Navigation;
+using Serilog;
 
 namespace WPF_Login
 {
@@ -26,6 +27,12 @@ namespace WPF_Login
         public Login()
         {
             InitializeComponent();
+
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File("C:\\Users\\Michael Distler\\source\\repos\\logs_wpf\\log.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
         }
 
         private void BtnSubmit_Click(object sender, RoutedEventArgs e)
@@ -33,6 +40,9 @@ namespace WPF_Login
             user loginUser = new user(txtUsername.Text, txtPassword.Text);
 
             DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
+
+            // Test log
+            Log.Debug("Button clicked");
 
             // Check if user exists
             if(db.userMgt(loginUser, "CheckUserNameExists"))

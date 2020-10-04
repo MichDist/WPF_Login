@@ -20,7 +20,10 @@
         <ListBox Name="lbEntries" HorizontalContentAlignment="Stretch" Grid.Row="0" Grid.Column="0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock FontWeight="Bold" Foreground="Red" Text="{Binding entry_abstract}" />
+                    <StackPanel>
+                        <TextBlock Name="tbTest1" FontWeight="Bold" Foreground="Red" Text="{Binding entry_abstract}" />
+                        <TextBlock Name="tbTest2" FontWeight="Bold" Foreground="Red" Text="{Binding topic}" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

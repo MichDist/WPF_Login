@@ -42,3 +42,10 @@ C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\RegisterNewU
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\RegisterNewUser.baml
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Pages\PageUserConfig.g.cs
 C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\obj\Debug\Pages\PageUserConfig.baml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.dll
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.Sinks.Console.dll
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.Sinks.File.dll
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.xml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.Sinks.Console.xml
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.Sinks.File.pdb
+C:\Users\Michael Distler\source\repos\WPF_Login\WPF_Login\bin\Debug\Serilog.Sinks.File.xml
