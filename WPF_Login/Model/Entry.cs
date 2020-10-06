@@ -10,14 +10,18 @@ namespace WPF_Login.Model
     {
         public int id;
         public int user_id;
-        public Topic topic { get; set; }
         public string entry_abstract { get; set; }
+        public string topic { get; set; }
+        public string title { get; set; }
 
 
-        public Entry(string pAbstract, Topic pTopic) 
+
+        public Entry(string pAbstract, string pTopic, string pTitle) 
         {
             this.entry_abstract = pAbstract;
             this.topic = pTopic;
+            this.title = pTitle;
+            
         }
 
     }

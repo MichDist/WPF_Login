@@ -25,9 +25,9 @@ namespace WPF_Login
             InitializeComponent();
 
             List<Model.Entry> list = new List<Model.Entry>();
-            list.Add(new Model.Entry("TEST TEXT 1", new Model.Topic("Topic 1")));
-            list.Add(new Model.Entry("TEST TEXT 2", new Model.Topic("Topic 2")));
-            list.Add(new Model.Entry("TEST TEXT 3", new Model.Topic("Topic 3")));
+            list.Add(new Model.Entry("TEST TEXT 1", "Topic 1", "title 1"));
+            list.Add(new Model.Entry("TEST TEXT 2", "Topic 2", "title 2"));
+            list.Add(new Model.Entry("TEST TEXT 3", "Topic 3", "title 3"));
 
             lbEntries.ItemsSource = list;
         }

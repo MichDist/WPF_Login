@@ -42,7 +42,7 @@ namespace WPF_Login
             DB.Database db = new DB.Database(@"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db");
 
             // Test log
-            Log.Debug("Button clicked");
+            Log.Debug("Button clicked TEST LOGS");
 
             // Check if user exists
             if(db.userMgt(loginUser, "CheckUserNameExists"))
