@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -19,6 +20,12 @@ namespace WPF_Login.DB
         public Database(string connectionString)
         {
             this.sConnectionString = connectionString;
+
+            Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .WriteTo.File("C:\\Users\\Michael Distler\\source\\repos\\logs_wpf\\log.txt", rollingInterval: RollingInterval.Day)
+            .CreateLogger();
         }
         #endregion
 
@@ -138,6 +145,51 @@ namespace WPF_Login.DB
             connection.Close();
 
             return pUser;
+        }
+
+        public Boolean saveEntry(Model.Entry pEntry)
+        {
+            Log.Information("Start of saveEntry method");
+
+            var connection = new SQLiteConnection(sConnectionString);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+
+
+            connection.Close();
+
+            return true;
+        }
+
+        public List<Model.Topic> getTopics()
+        {
+            Log.Information("Start of getTopics method");
+
+            List<Model.Topic> listTopics = new List<Model.Topic>();
+
+            var connection = new SQLiteConnection(sConnectionString);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+            command.CommandText = "SELECT id, topic_name FROM topic";
+            command.Prepare();
+
+            SQLiteDataReader rdr = command.ExecuteReader();
+            Model.Topic topic = new Model.Topic();
+            // Read result                                  
+            while (rdr.Read())
+            {
+                topic.topicId = rdr.GetInt32(0);
+                topic.topicName = rdr.GetString(1);
+                listTopics.Add(topic); 
+            }
+
+            rdr.Close();
+
+            connection.Close();
+
+            return listTopics;
         }
     }
 }
