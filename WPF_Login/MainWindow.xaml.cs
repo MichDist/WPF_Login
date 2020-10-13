@@ -50,24 +50,6 @@ namespace WPF_Login
             //currentUser.Text = currentUser.Text + App.Current.Properties["currentUser"].ToString();
             // Date ??
 
-            // How to pass data between windows?
-            //string cs = @"URI=file:C:\Users\Michael Distler\source\repos\WPF_Login\test.db";
-            //var con = new SQLiteConnection(cs);
-            //con.Open();
-            //var cmd = new SQLiteCommand(con);
-
-            //cmd.CommandText = "SELECT user_name FROM temp.CURRENT_USER ";
-            //cmd.Prepare();
-
-            //SQLiteDataReader rdr = cmd.ExecuteReader();
-
-            //while (rdr.Read())
-            //{
-            //    currentUser.Text = rdr.GetString(0);
-            //}
-
-            //rdr.Close();
-            //con.Close();
         }
 
         private void BtnHome_Click(object sender, RoutedEventArgs e)

@@ -8,14 +8,19 @@ namespace WPF_Login.Model
 {
     class Topic
     {
-        public int topicId;
-        public string topicName;
+        public int topicId { get; set; }
+        public string topicName { get; set; }
 
         public Topic() { }
         public Topic(int pTopicId, string pTopicName)
         {
             this.topicName = pTopicName;
             this.topicId = pTopicId;
+        }
+
+        public override string ToString()
+        {
+            return topicName;
         }
     }
 }

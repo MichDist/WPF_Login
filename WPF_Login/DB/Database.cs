@@ -176,19 +176,22 @@ namespace WPF_Login.DB
             command.Prepare();
 
             SQLiteDataReader rdr = command.ExecuteReader();
-            Model.Topic topic = new Model.Topic();
             // Read result                                  
             while (rdr.Read())
             {
-                topic.topicId = rdr.GetInt32(0);
-                topic.topicName = rdr.GetString(1);
-                listTopics.Add(topic); 
+                listTopics.Add(new Model.Topic(rdr.GetInt32(0), rdr.GetString(1))); 
             }
 
             rdr.Close();
 
             connection.Close();
 
+            foreach(Model.Topic item in listTopics)
+            {
+                Log.Debug("AUS METHODE: " + item.topicName);
+            }
+            Log.Debug("Debug: Content of list: " + listTopics.ToString());
+            Log.Information("End: getTopics method");
             return listTopics;
         }
     }
