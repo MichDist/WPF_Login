@@ -147,21 +147,6 @@ namespace WPF_Login.DB
             return pUser;
         }
 
-        public Boolean saveEntry(Model.Entry pEntry)
-        {
-            Log.Information("Start of saveEntry method");
-
-            var connection = new SQLiteConnection(sConnectionString);
-            connection.Open();
-
-            var command = new SQLiteCommand(connection);
-
-
-            connection.Close();
-
-            return true;
-        }
-
         public List<Model.Topic> getTopics()
         {
             Log.Information("Start of getTopics method");
@@ -193,6 +178,38 @@ namespace WPF_Login.DB
             Log.Debug("Debug: Content of list: " + listTopics.ToString());
             Log.Information("End: getTopics method");
             return listTopics;
+        }
+
+        public Boolean saveEntry(Model.Entry pEntry)
+        {
+            Boolean result = false;
+            Log.Information("Entry object: userId: " + pEntry.user_id + ", typeID: " + pEntry.typeId + ", userID: " + pEntry.user_id + ", title: " + pEntry.title + ", description: " + pEntry.entry_abstract + ", topicNAme: " + pEntry.topic);
+
+            List<Model.Topic> topicList = new List<Model.Topic>();
+            topicList = getTopics();
+            foreach(Model.Topic topic in topicList)
+            {
+                if(topic.topicName == pEntry.topic)
+                {
+                    pEntry.topicId = topic.topicId;
+                }
+            }
+            // No topicID => New topic
+            if(pEntry.topicId == 0)
+            {
+                // Insert new Topic in new Method
+            }
+
+            var connection = new SQLiteConnection(sConnectionString);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+
+
+
+            connection.Close();
+
+            return result;
         }
     }
 }

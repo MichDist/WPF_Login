@@ -10,15 +10,21 @@ namespace WPF_Login.Model
     {
         public int id;
         public int user_id;
-        private int topicId { get; set; }
-        private int typeId { get; set; }
+        public int topicId { get; set; }
+        public int typeId { get; set; }
         public string entry_abstract { get; set; }
         public string topic { get; set; }
         public string title { get; set; }
         public string type { get; set; }
         public string content { get; set; }
         public string userName { get; set; }
+        public int tag_ids { get; set; }
+        public string tags { get; set; }
 
+        public Entry()
+        {
+
+        }
 
         public Entry(string pAbstract, string pTopic, string pTitle) 
         {
@@ -28,7 +34,7 @@ namespace WPF_Login.Model
            
         }
 
-        public Entry(string pAbstract, string pTopic, string pTitle, string pType, string pContent, int pUserId, string pUserName)
+        public Entry(string pAbstract, string pTopic, string pTitle, string pType, string pContent, int pUserId, string pUserName, string pTags)
         {
             this.entry_abstract = pAbstract;
             this.topic = pTopic;
@@ -37,6 +43,7 @@ namespace WPF_Login.Model
             this.content = pContent;
             this.user_id = pUserId;
             this.userName = pUserName;
+            this.tags = pTags;
         }
     }
 }
