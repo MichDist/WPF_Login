@@ -57,13 +57,15 @@ namespace WPF_Login
             entry.entry_abstract = txtBoxDescription.Text;
             // Content
             // Topic
-            if(cbTopic.Text != null || cbTopic.Text != "")
+            if(txtBoxTopic.Text == null || txtBoxTopic.Text == "")
             {
                 entry.topic = cbTopic.Text;
+                Log.Debug("Combobox topic: " + cbTopic.Text);
             }
             else
             {
                 entry.topic = txtBoxTopic.Text;
+                Log.Debug("Textbox topic: " + txtBoxTopic.Text);
             }
             entry.topicId = 0;
             // Tags - später machen !!!!!!!

@@ -197,15 +197,58 @@ namespace WPF_Login.DB
             // No topicID => New topic
             if(pEntry.topicId == 0)
             {
-                // Insert new Topic in new Method
+                saveTopic(pEntry.topic);
             }
+
+            // Get topic_id, ugly -> improve later
+            topicList = getTopics();
+            foreach(Model.Topic topic in topicList)
+            {
+                if(topic.topicName == pEntry.topic)
+                {
+                    pEntry.topicId = topic.topicId;
+                }
+            }
+
 
             var connection = new SQLiteConnection(sConnectionString);
             connection.Open();
 
             var command = new SQLiteCommand(connection);
 
+            command.CommandText = "INSERT INTO entry(user_id, topic_id, type_id, title, description) " +
+                "VALUES(@user_id, @topic_id, @type_id, @title, @desc)";
+            command.Parameters.AddWithValue("@user_id", pEntry.user_id);
+            command.Parameters.AddWithValue("@topic_id", pEntry.topicId);
+            command.Parameters.AddWithValue("@type_id", pEntry.typeId);
+            command.Parameters.AddWithValue("@title", pEntry.title);
+            command.Parameters.AddWithValue("@topic_id", pEntry.topicId);
+            command.Parameters.AddWithValue("@desc", pEntry.entry_abstract);
+            //command.Parameters.AddWithValue("@crDatec", ); ;
 
+            command.Prepare();
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return result;
+        }
+
+        public Boolean saveTopic(string pTopic)
+        {
+            Boolean result = true;  // should be false when check if db operation was successfull is implemented
+            Log.Information("Start of saveTopic method.");
+
+            var connection = new SQLiteConnection(sConnectionString);
+            connection.Open();
+
+            var command = new SQLiteCommand(connection);
+
+            command.CommandText = "INSERT INTO topic(topic_name) VALUES(@topic)";
+            command.Parameters.AddWithValue("@topic", pTopic);
+            command.Prepare();
+
+            command.ExecuteNonQuery();
 
             connection.Close();
 
